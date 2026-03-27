@@ -1,3 +1,7 @@
 API/bin
 API/obj
 .vscode
+API/Data/Migrations
+API/datingapp.db
+API/datingapp.db-shm
+API/datingapp.db-wal
