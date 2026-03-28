@@ -54,3 +54,7 @@ https://github.com/FiloSottile/mkcert/releases
             "sslCert": "./ssl/localhost.pem",
             "sslKey": "./ssl/localhost-key.pem"
           },
+
+Create JWT token - Need package
+
+1. System.IdentityModel.Tokens.Jwt
