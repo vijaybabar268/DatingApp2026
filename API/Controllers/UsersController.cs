@@ -1,5 +1,6 @@
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,7 @@ public class UsersController : BaseApiController
         return users;
     }
 
+    [Authorize]
     [HttpGet("{id:int}")]
     public async Task<ActionResult<AppUser>> GetUsers(int id)
     {

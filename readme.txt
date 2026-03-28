@@ -58,3 +58,4 @@ https://github.com/FiloSottile/mkcert/releases
 Create JWT token - Need package
 
 1. System.IdentityModel.Tokens.Jwt
+2. Microsoft.Aspnetcore.Authentication.Jwtbearer
