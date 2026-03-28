@@ -28,3 +28,29 @@ Create Angular Project - v16
 
 1. ng new client
 2. ng serve
+
+Install vs code extensions
+
+1. C# dev kit
+2. Angular language service
+
+Install Bootstrap, Font Awesome
+
+1. ng add ngx-bootstrap@11 -- for angular 16
+2. npm i font-awesome
+
+Search google 'mkcert' to run angular on HTTPS
+https://github.com/FiloSottile/mkcert/releases
+1. download mkcert-v*-windows-amd64.exe
+2. rename mkcert
+3. move to C:\Windows\System32\
+4. open powershell mkcert --version
+5. open ssl folder inside src -> mkcert -install
+6. mkcert localhost
+7. open angular.json and add below lines
+ "serve": {
+            "options": {
+            "ssl": true,
+            "sslCert": "./ssl/localhost.pem",
+            "sslKey": "./ssl/localhost-key.pem"
+          },
