@@ -1,4 +1,4 @@
-Create .NET Project
+Create .NET Project - .NET 10
 
 1. dotnet new sln
 2. dotnet new webapi -n API --use-controllers
@@ -23,3 +23,8 @@ Apply Migrations
 
 2. dotnet ef database update
 
+
+Create Angular Project - v16
+
+1. ng new client
+2. ng serve
