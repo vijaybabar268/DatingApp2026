@@ -7,6 +7,13 @@
     </div>
 
     <div class="form-group mb-3">
+        <label>Who is your favorite user?</label>        
+        <select class="form-select" name="favoriteUsername" [(ngModel)]="model.favoriteUsername">
+            <option *ngFor="let user of usersFromHomeComponent" [value]="user.userName">{{ user.userName }}</option>
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
         <input name="password" [(ngModel)]="model.password" placeholder="Password" type="password" 
             class="form-control">
     </div>
