@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,11 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  model: any = {};
+  loggedIn = false;
 
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+  }
+
+  login() {
+    this.accountService.login(this.model).subscribe({
+      next: (res) => {
+        console.log("Success");
+        this.loggedIn = true;
+      },
+      error: (err) => console.log("Error: ", err),
+      complete: () => {
+        console.log("Request completed");
+        this.model = {};
+      }
+    })
+  }
+
+  logout() {
+    this.loggedIn = false;
   }
 
 }

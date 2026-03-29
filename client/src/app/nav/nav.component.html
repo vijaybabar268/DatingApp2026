@@ -2,7 +2,7 @@
    <div class="container">
         <a class="navbar-brand" href="#">Dating App</a>             
         
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <ul *ngIf="loggedIn" class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item"> 
                 <a class="nav-link active" href="#">Matches</a> 
             </li>
@@ -11,12 +11,20 @@
             </li>
             <li class="nav-item"> 
                 <a class="nav-link" href="#">Messages</a> 
-            </li>
+            </li>            
         </ul>
 
-        <form class="d-flex"> 
-            <input class="form-control me-2" type="text" placeholder="Username">
-            <input class="form-control me-2" type="password" placeholder="Password"> 
+        <div *ngIf="loggedIn" class="dropdown" dropdown>
+            <a class="dropdown-toggle text-light text-decoration-none" dropdownToggle>Welcome user</a>
+            <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item">Edit Profile</a>
+                <a (click)="logout()" class="dropdown-item">Logout</a>
+            </div>
+        </div>
+
+        <form *ngIf="!loggedIn" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex">
+            <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
+            <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password" placeholder="Password"> 
             <button class="btn btn-outline-success" type="submit">Login</button> 
         </form>
    </div>

@@ -59,3 +59,6 @@ Create JWT token - Need package
 
 1. System.IdentityModel.Tokens.Jwt
 2. Microsoft.Aspnetcore.Authentication.Jwtbearer
+
+Login & Register
+1. ng add ngx-bootstrap  --component dropdowns
