@@ -62,3 +62,8 @@ Create JWT token - Need package
 
 Login & Register
 1. ng add ngx-bootstrap  --component dropdowns
+
+Drop database
+
+1. dotnet ef database drop
+2. dotnet ef database update
