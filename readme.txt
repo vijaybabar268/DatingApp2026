@@ -67,3 +67,9 @@ Drop database
 
 1. dotnet ef database drop
 2. dotnet ef database update
+
+
+Notification
+
+1. npm install ngx-toastr@17
+2. add css in angular.json - "./node_modules/ngx-toastr/toastr.css"
