@@ -73,3 +73,8 @@ Notification
 
 1. npm install ngx-toastr@17
 2. add css in angular.json - "./node_modules/ngx-toastr/toastr.css"
+
+
+Better Theme
+
+1. npm install bootswatch
