@@ -26,9 +26,6 @@ export class NavComponent implements OnInit {
         console.log("Success");
         this.router.navigateByUrl('/members');
       },
-      error: (err) => {
-        this.toastr.error(err.error);
-      },
       complete: () => {
         console.log("Request completed");
         this.model = {};
