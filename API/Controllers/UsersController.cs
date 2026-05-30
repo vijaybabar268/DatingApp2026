@@ -23,21 +23,16 @@ public class UsersController : BaseApiController
     [HttpGet]
     public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
     {
-        var users = await _userRepository.GetUsersAsync();
+        var users = await _userRepository.GetMembersAsync();
 
-        var usersToReturn = _mapper.Map<IEnumerable<AppUser>, IEnumerable<MemberDto>>(users);
-
-        return Ok(usersToReturn);
+        return Ok(users);
     }
         
     [HttpGet("{username}")]
     public async Task<ActionResult<MemberDto>> GetUsers(string username)
     {
-        var user = await _userRepository.GetUserByUsernameAsync(username);
+        var user = await _userRepository.GetMemberByUsernameAsync(username);
 
-        var userToReturn = _mapper.Map<AppUser,MemberDto>(user);
-
-        return Ok(userToReturn);
-
+        return Ok(user);
     }
 }
