@@ -23,7 +23,7 @@ export class NavComponent implements OnInit {
   login() {
     this.accountService.login(this.model).subscribe({
       next: (res) => {
-        console.log("Success");
+        this.toastr.success("Login")
         this.router.navigateByUrl('/members');
       },
       complete: () => {
@@ -35,6 +35,7 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.accountService.logout();
+    this.toastr.success("Logout")
     this.router.navigateByUrl('/');
   }
 

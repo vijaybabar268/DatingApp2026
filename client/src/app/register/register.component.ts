@@ -8,7 +8,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  @Input() usersFromHomeComponent: any;
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
 
@@ -20,10 +19,10 @@ export class RegisterComponent implements OnInit {
   register() {
     this.accountService.register(this.model).subscribe({
       next: () => {
+        this.toastr.success("Registered");
         this.cancel();
       },
       error: (err) => {
-        console.log(err);
         this.toastr.error(err.errors);
       }
     })
